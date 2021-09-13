@@ -52,7 +52,6 @@ const updatePrice = (id, value) => {
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
   document.getElementById(id).innerText = total.toFixed(2);
-  // console.log(total);
 };
 
 
@@ -90,28 +89,28 @@ const updateTotal = () => {
 loadProducts();
 
 
+// get details and show above the search bar   get details and show above the search bar
+
+// get details
 const getDetails =(id)=>{
   const url =`https://fakestoreapi.com/products/${id}`;
-  console.log('xfghs');
   fetch(url)
     .then(res=>res.json())
     .then(data=> showDetails(data))
 
 }
 
+// show details
 const showDetailsDiv = document.getElementById('show-details-div');
 
 const showDetails = (product)=>{
   showDetailsDiv.textContent = '';
 
-  console.log(product);
   const div = document.createElement('div');
   div.classList.add('show-details')
   div.innerHTML = `
   <h3>Title: ${product.title}</h3>
   <p>Description: ${product.description}</p>
-
-
   `;
   showDetailsDiv.appendChild(div);
 }

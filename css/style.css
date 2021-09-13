@@ -18,13 +18,10 @@ body {
   width: 900px;
   border-radius: 5px;
   margin: auto;
-  /* margin-top: 50px; */
-  /* border-right: none; */
   display: flex;
 
 }
 .search-button {
-  /* padding: 10px 50px; */
   border-radius: 25px;
   margin-left: 725px;
 
@@ -32,7 +29,6 @@ body {
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* border: 1px solid black; */
   text-align: center;
   width: 100%;
   margin: auto;
@@ -57,7 +53,6 @@ body {
 }
 .cart {
   width: 350px;
-  /* border: 1px solid green; */
   padding: 10px;
   box-shadow: 10px 10px 20px gray;
   border-radius: 5px;
@@ -71,7 +66,6 @@ body {
 
 .show-details{
   width: 500px;
-  /* height: 300px; */
   border: 2px solid grey;
   border-radius: 5px;
   margin: 15px auto 15px auto;
@@ -79,6 +73,9 @@ body {
   text-align: justify;
 
 }
+
+
+/* media screen 768   media screen  media screen  media screen  media screen */
 @media only screen and (max-width: 768px) {
   .search-field {
     margin: 0px auto 0px auto;
@@ -88,13 +85,10 @@ body {
     width: 43rem;
     border-radius: 5px;
     margin: 10px 10px 10px 10px;
-    /* margin-top: 50px; */
-    /* border-right: none; */
     display: flex;
   
   }
   .search-button {
-    /* padding: 10px 50px; */
     border-radius: 25px;
     margin-left: 26rem;
   
@@ -106,18 +100,29 @@ body {
   }
   .cart {
     width: 300px;
-    /* border: 1px solid green; */
     padding: 10px;
     box-shadow: 10px 10px 20px gray;
     border-radius: 5px;
-    /* margin-right: 30px; */
     position: relative;
     margin: 0px auto 25px auto;
   }
   .cart-main {
     padding-right: 10px;
   }
+  .show-details{
+    width: 300px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin: 15px auto 15px auto;
+    padding: 11px;
+    text-align: justify;
+  
+  }
 }
+
+/* media screen 468   media screen  media screen  media screen  media screen */
+
+
 @media only screen and (max-width: 468px) {
   .search-field {
     margin: 0px auto 0px auto;
@@ -127,13 +132,10 @@ body {
     width: 19rem;
     border-radius: 5px;
     margin: 1rem;
-    /* margin-top: 50px; */
-    /* border-right: none; */
     display: flex;
   
   }
   .search-button {
-    /* padding: 10px 50px; */
     border-radius: 25px;
     margin-left: 1.3rem;
   
