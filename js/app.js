@@ -12,7 +12,7 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
-      <div class="card">
+      <div>
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
@@ -21,12 +21,9 @@ const showProducts = (products) => {
       <h5>Rated by: ${product.rating.count}</h5>
       <h2>Price: $ ${product.price}</h2>
       
-      <div class="card-footer">
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button>
-      <div>
-      
-      
+      <button id="details-btn" onclick="getDetails(${product.id})" class="btn btn-danger">Details</button>
+  
       </div>
       `;
     document.getElementById("all-products").appendChild(div);
@@ -55,7 +52,7 @@ const updatePrice = (id, value) => {
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
   document.getElementById(id).innerText = total.toFixed(2);
-  console.log(total);
+  // console.log(total);
 };
 
 
@@ -91,3 +88,30 @@ const updateTotal = () => {
 };
 
 loadProducts();
+
+
+const getDetails =(id)=>{
+  const url =`https://fakestoreapi.com/products/${id}`;
+  console.log('xfghs');
+  fetch(url)
+    .then(res=>res.json())
+    .then(data=> showDetails(data))
+
+}
+
+const showDetailsDiv = document.getElementById('show-details-div');
+
+const showDetails = (product)=>{
+  showDetailsDiv.textContent = '';
+
+  console.log(product);
+  const div = document.createElement('div');
+  div.classList.add('show-details')
+  div.innerHTML = `
+  <h3>Title: ${product.title}</h3>
+  <p>Description: ${product.description}</p>
+
+
+  `;
+  showDetailsDiv.appendChild(div);
+}
